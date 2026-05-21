@@ -1,5 +1,7 @@
-package com.ssafy.ssafy_study.post.controller.dto;
+package com.ssafy.ssafy_study.domain.post.controller.dto;
 
+import com.ssafy.ssafy_study.domain.member.entity.MemberEntity;
+import com.ssafy.ssafy_study.domain.post.entity.PostEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public class PostRequest {
@@ -7,13 +9,10 @@ public class PostRequest {
     private final String title;
     @Schema(description = "게시글 내용", example = "반갑습니다. 열심히 공부해요!")
     private final String content;
-    @Schema(description = "작성자", example = "김싸피")
-    private final String author;
 
-    public PostRequest(String title, String content, String author) {
+    public PostRequest(String title, String content) {
         this.title = title;
         this.content = content;
-        this.author = author;
     }
 
     public String getTitle() {
@@ -24,7 +23,9 @@ public class PostRequest {
         return content;
     }
 
-    public String getAuthor() {
-        return author;
+    public PostEntity toEntity(MemberEntity author) {
+        return PostEntity.create(title, content, author);
     }
+
+
 }
