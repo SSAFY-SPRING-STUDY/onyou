@@ -1,9 +1,9 @@
-package com.ssafy.ssafy_study.member.controller.dto;
+package com.ssafy.ssafy_study.domain.member.controller.dto;
 
-import com.ssafy.ssafy_study.member.entity.MemberEntity;
+import com.ssafy.ssafy_study.domain.member.entity.MemberEntity;
+import com.ssafy.ssafy_study.global.exception.CustomException;
+import com.ssafy.ssafy_study.global.exception.error.ErrorCode;
 import io.swagger.v3.oas.annotations.media.Schema;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
@@ -17,7 +17,7 @@ public record MemberResponse(
 ) {
     public static MemberResponse from(Optional<MemberEntity> memberEntity){
         MemberEntity member = memberEntity
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 회원입니다."));
+                .orElseThrow(() -> new CustomException(ErrorCode.MEMBER_NOT_FOUND));
         return new MemberResponse(
                 member.getId(),
                 member.getUsername(),

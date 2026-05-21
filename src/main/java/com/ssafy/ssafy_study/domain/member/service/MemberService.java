@@ -1,12 +1,10 @@
-package com.ssafy.ssafy_study.member.service;
+package com.ssafy.ssafy_study.domain.member.service;
 
-import com.ssafy.ssafy_study.member.controller.dto.MemberRequest;
-import com.ssafy.ssafy_study.member.controller.dto.MemberResponse;
-import com.ssafy.ssafy_study.member.entity.MemberEntity;
-import com.ssafy.ssafy_study.member.repository.MemberRepository;
+import com.ssafy.ssafy_study.domain.member.controller.dto.MemberRequest;
+import com.ssafy.ssafy_study.domain.member.controller.dto.MemberResponse;
+import com.ssafy.ssafy_study.domain.member.entity.MemberEntity;
+import com.ssafy.ssafy_study.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

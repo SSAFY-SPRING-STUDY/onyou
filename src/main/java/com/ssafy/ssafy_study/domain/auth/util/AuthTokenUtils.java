@@ -1,4 +1,4 @@
-package com.ssafy.ssafy_study.auth.util;
+package com.ssafy.ssafy_study.domain.auth.util;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

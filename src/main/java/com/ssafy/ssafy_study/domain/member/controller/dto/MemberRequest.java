@@ -1,6 +1,6 @@
-package com.ssafy.ssafy_study.member.controller.dto;
+package com.ssafy.ssafy_study.domain.member.controller.dto;
 
-import com.ssafy.ssafy_study.member.entity.MemberEntity;
+import com.ssafy.ssafy_study.domain.member.entity.MemberEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public record MemberRequest(

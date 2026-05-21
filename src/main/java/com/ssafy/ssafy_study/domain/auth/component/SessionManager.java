@@ -1,8 +1,8 @@
-package com.ssafy.ssafy_study.auth.component;
+package com.ssafy.ssafy_study.domain.auth.component;
 
-import org.springframework.http.HttpStatus;
+import com.ssafy.ssafy_study.global.exception.CustomException;
+import com.ssafy.ssafy_study.global.exception.error.ErrorCode;
 import org.springframework.stereotype.Component;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
 import java.util.UUID;
@@ -30,7 +30,7 @@ public class SessionManager {
 
         if(memberId == null){
             // 없으면 오류 던지기
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"유효하지 않음");
+            throw new CustomException(ErrorCode.UNAUTHORIZED);
         }else {
             return memberId;
         }

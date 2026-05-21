@@ -1,6 +1,6 @@
-package com.ssafy.ssafy_study.member.repository;
+package com.ssafy.ssafy_study.domain.member.repository;
 
-import com.ssafy.ssafy_study.member.entity.MemberEntity;
+import com.ssafy.ssafy_study.domain.member.entity.MemberEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -18,22 +18,13 @@ public class MemberRepository {
     }
 
     public Optional<MemberEntity> findByUsername(String username){
-        for(MemberEntity memberEntity : repo.values() ){
-            if(memberEntity.getUsername().equals(username)){
-                return Optional.of(memberEntity);
-            }
-        }
-        return null;
+        return repo.values().stream()
+                .filter(member -> member.getUsername().equals(username))
+                .findFirst();
     }
 
     public Optional<MemberEntity> findById(Long memberId){
-        if(repo.containsKey(memberId)){
-            return Optional.ofNullable(repo.get(memberId));
-        }
-        else {
-            return null;
-        }
-
+        return Optional.ofNullable(repo.get(memberId));
     }
 
 }

@@ -1,4 +1,4 @@
-package com.ssafy.ssafy_study.member.entity;
+package com.ssafy.ssafy_study.domain.member.entity;
 
 import lombok.Getter;
 
@@ -24,11 +24,8 @@ public class MemberEntity {
         return new MemberEntity(newId, username, password, nickname);
     }
 
-    public static boolean checkPassword(String password){
-        if(password.equals(password)){
-            return true;
-        }
-        else return false;
+    public boolean checkPassword(String password){
+        return this.password.equals(password);
     }
 
 

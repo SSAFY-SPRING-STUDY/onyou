@@ -1,4 +1,4 @@
-package com.ssafy.ssafy_study.auth.controller.dto;
+package com.ssafy.ssafy_study.domain.auth.controller.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
